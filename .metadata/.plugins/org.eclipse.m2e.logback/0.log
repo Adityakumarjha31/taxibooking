@@ -2056,3 +2056,4 @@
 2025-10-02 22:36:50,105 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2025-10-02 22:36:50,137 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 120 resources from src\main\resources to target\classes
 2025-10-02 22:36:50,273 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\91752\Desktop\TAXI APP\taxibooking\src\test\resources
+2025-10-04 14:27:08,483 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
