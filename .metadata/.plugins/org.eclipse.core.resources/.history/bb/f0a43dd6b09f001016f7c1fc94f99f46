@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Services</title>
+		<meta charset="utf-8">
+		<meta name = "format-detection" content = "telephone=no" />
+		<link rel="icon" href="images/favicon.ico">
+		<link rel="shortcut icon" href="images/favicon.ico" />
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-migrate-1.2.1.js"></script>
+		<script src="js/script.js"></script>
+		<script src="js/superfish.js"></script>
+		<script src="js/jquery.ui.totop.js"></script>
+		<script src="js/jquery.equalheights.js"></script>
+		<script src="js/jquery.mobilemenu.js"></script>
+		<script src="js/jquery.easing.1.3.js"></script>
+		<script>
+			$(document).ready(function(){
+				$().UItoTop({ easingType: 'easeOutQuart' });
+			});
+		</script>
+		<!--[if lt IE 8]>
+			<div style=' clear: both; text-align:center; position: relative;'>
+				<a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+					<img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+				</a>
+			</div>
+		<![endif]-->
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv.js"></script>
+			<link rel="stylesheet" media="screen" href="css/ie.css">
+		<![endif]-->
+	</head>
+	<body class="" id="top">
+		<div class="main">
+<!--==============================header=================================-->
+
+<div  th:insert="~{fragments/header.html}"  ></div>
+<!--==============================header=================================-->
+			
+<!--==============================Content=================================-->
+			<div class="content"><div class="ic">More Website Templates @ TemplateMonster.com - April 07, 2014!</div>
+				<div class="container_12">
+					<div class="grid_12">
+						<h3>Services Overview</h3>
+					</div>
+	<div class="grid_4">
+  <div class="box">
+    <div class="maxheight">
+      <img src="images/page4_img2.jpg" alt="Airport Transfers">
+      <div class="text1 color2">
+        <a href="#">Airport Transfers</a>
+      </div>
+      Fast, reliable airport pickup and drop-off service. We ensure timely rides to catch your flights comfortably and safely.
+      <br>
+      <a href="/" class="btn">Book Now</a>
+    </div>
+  </div>
+</div>
+
+<div class="grid_4">
+  <div class="box">
+    <div class="maxheight">
+      <img src="images/page4_img3.jpg" alt="City Tours">
+      <div class="text1 color2">
+        <a href="#">City Tours</a>
+      </div>
+      Explore the city with our experienced drivers. Enjoy sightseeing in comfort while we take care of navigation and parking.
+      <br>
+      <a href="/" class="btn">Book Now</a>
+    </div>
+  </div>
+</div>
+
+<div class="grid_4">
+  <div class="box">
+    <div class="maxheight">
+      <img src="images/page4_img4.jpg" alt="Hourly Rental">
+      <div class="text1 color2">
+        <a href="#">Hourly Rental</a>
+      </div>
+      Hire a taxi by the hour for business meetings, shopping, or errands. Flexible, convenient, and cost-effective.
+      <br>
+      <a href="/" class="btn">Book Now</a>
+    </div>
+  </div>
+</div>
+
+<div class="grid_4">
+  <div class="box">
+    <div class="maxheight">
+      <img src="images/page4_img5.jpg" alt="Outstation Trips">
+      <div class="text1 color2">
+        <a href="#">Outstation Trips</a>
+      </div>
+      Comfortable outstation travel for long distances. Safe, reliable cars with professional drivers for intercity journeys.
+      <br>
+      <a href="/" class="btn">Book Now</a>
+    </div>
+  </div>
+</div>
+
+<div class="grid_4">
+  <div class="box">
+    <div class="maxheight">
+      <img src="images/page4_img6.jpg" alt="Luxury Taxis">
+      <div class="text1 color2">
+        <a href="#">Luxury Taxis</a>
+      </div>
+      Travel in style with our luxury fleet. Ideal for special occasions or corporate events where comfort and elegance matter.
+      <br>
+      <a href="/" class="btn">Book Now</a>
+    </div>
+  </div>
+</div>
+
+<div class="grid_4">
+  <div class="box">
+    <div class="maxheight">
+      <img src="images/page4_img7.jpg" alt="Corporate Services">
+      <div class="text1 color2">
+        <a href="#">Corporate Services</a>
+      </div>
+      Dedicated corporate taxi services for employees and clients. Professional, timely, and tailored to your business needs.
+      <br>
+      <a href="/" class="btn">Book Now</a>
+    </div>
+  </div>
+</div>
+
+<div class="grid_4">
+  <div class="box">
+    <div class="maxheight">
+      <img src="images/page4_img8.jpg" alt="Night Rides">
+      <div class="text1 color2">
+        <a href="#">Night Rides</a>
+      </div>
+      Safe and secure night-time rides. Our drivers are trained to navigate city streets safely during late hours.
+      <br>
+      <a href="/" class="btn">Book Now</a>
+    </div>
+  </div>
+</div>
+
+<div class="grid_4">
+  <div class="box">
+    <div class="maxheight">
+      <img src="images/page4_img9.jpg" alt="Event Transfers">
+      <div class="text1 color2">
+        <a href="#">Event Transfers</a>
+      </div>
+      Hassle-free transportation for weddings, parties, or conferences. We ensure timely arrivals and departures.
+      <br>
+      <a href="/" class="btn">Book Now</a>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+<!--==============================footer=================================-->
+<div  th:insert="~{fragments/footer.html}"  ></div>
+<!--==============================footer=================================-->
+	</body>
+</html>

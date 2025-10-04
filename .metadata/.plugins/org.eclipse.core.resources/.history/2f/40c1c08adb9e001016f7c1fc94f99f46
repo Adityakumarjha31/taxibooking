@@ -1,0 +1,126 @@
+package tech.codehunt.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import tech.codehunt.dao.BookingFormCrud;
+import tech.codehunt.model.BookingForm;
+import tech.codehunt.service.AdminCredentialsService;
+import tech.codehunt.service.BookingFormService;
+import tech.codehunt.service.ContactFormService;
+
+@Controller
+@RequestMapping("admin")
+public class AdminController {
+
+    private final BookingFormCrud bookingFormCrud;
+	private ContactFormService contactFormService;
+	private AdminCredentialsService adminCredentialsService;
+	private BookingFormService bookingFormService;
+
+    AdminController(BookingFormCrud bookingFormCrud) {
+        this.bookingFormCrud = bookingFormCrud;
+    }
+	
+	@Autowired
+public void setBookingFormService(BookingFormService bookingFormService) {
+		this.bookingFormService = bookingFormService;
+	}
+
+
+@Autowired
+   public void setAdminCredentialsService(AdminCredentialsService adminCredentialsService) {
+		this.adminCredentialsService = adminCredentialsService;
+	}
+
+
+   @Autowired
+	public void setContactFormService(ContactFormService contactFormService) {
+		this.contactFormService = contactFormService;
+	}
+
+
+	@GetMapping("dashboard")
+public String adminDashboard() {
+	return "admin/dashboard"; 
+  }
+	
+	
+	
+		@GetMapping("readAllContacts")
+	public String readAllContacts(Model model) {
+			model.addAttribute("allcontacts",contactFormService.readAllContactService());
+			
+			
+			
+		return "admin/readallcontacts"; 
+	  }
+		
+		
+
+		@GetMapping("deleteContacts/{id}")
+	public String deleteContacts(@PathVariable int id,RedirectAttributes redirectAttributes) {
+			contactFormService.deleteContactService(id);
+			redirectAttributes.addFlashAttribute("message","CONTACT  DELETED SUCCESSFULLY");
+			return "redirect:/admin/readAllContacts";
+	  }
+		
+
+		@GetMapping("changeCredentials")
+	public String changeCredntialsView() {
+			return "admin/changecredentials";
+	  }
+		@PostMapping("changeCredentials")
+		public String changeCredntials(
+				@RequestParam("oldusername")String oldusername,
+		@RequestParam("oldpassword")String oldpassword,
+@RequestParam("newusername")String newusername,
+@RequestParam("newpassword")String newpassword,
+RedirectAttributes redirectAttributes 
+
+)
+		
+		
+		{
+			String result= adminCredentialsService.checkAdminCredentials(oldusername,oldpassword);
+			if(result.equals("SUCCESS")) {
+				result = adminCredentialsService.updateAdminCredentials(newusername, newpassword, oldusername);
+			
+			redirectAttributes.addFlashAttribute("message", result);
+			}
+			else {
+			
+				redirectAttributes.addFlashAttribute("message", result);
+			
+		  }
+			return "redirect:/admin/dashboard";
+		
+		}
+
+		@GetMapping("readAllBookings")
+	public String readAllBookings(Model model) {
+					model.addAttribute("allBookings",bookingFormService.readAllBookingService());
+			
+			
+			
+		return "admin/readallbookings"; 
+	  }
+
+		@GetMapping("deleteBooking/{id}")
+	public String deleteBooking(@PathVariable int id,RedirectAttributes redirectAttributes) {
+			bookingFormService.deleteBookingService(id);
+			redirectAttributes.addFlashAttribute("message","Booking  DELETED SUCCESSFULLY");
+			return "redirect:/admin/readAllBookings";
+	  }
+		
+
+		
+}

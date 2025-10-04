@@ -1,0 +1,5 @@
+package tech.codehunt.config;
+
+public class UserDetailsServiceImpl {
+
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Add Service</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .service-form {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    width: 400px;
+  }
+  .service-form h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+  }
+  .service-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+  }
+  .service-form input[type="text"],
+  .service-form input[type="file"],
+  .service-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+  .service-form textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+  .service-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ffc107;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  .service-form button:hover {
+    background-color: #e0a800;
+    color: #fff;
+  }
+</style>
+</head>
+<body>
+
+<div class="service-form">
+  <h2>Add New Service</h2>
+  <form action="/addService" method="post" enctype="multipart/form-data">
+    <label for="image">Service Image:</label>
+    <input type="file" id="image" name="image" accept="image/*" required>
+
+    <label for="title">Service Title:</label>
+    <input type="text" id="title" name="title" placeholder="Enter service title" required>
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" placeholder="Enter service description" required></textarea>
+
+    <button type="submit">Add Service</button>
+  </form>
+</div>
+
+</body>
+</html>
